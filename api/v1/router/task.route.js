@@ -1,0 +1,11 @@
+const express = require("express");
+const route = express.Router();
+const controller = require("../../v1/controllers/task.controller");
+route.get("/", controller.index);
+route.get("/detail/:id", controller.detail);
+route.patch("/change-status/:id", controller.ChangeStatus);
+route.patch("/change-multi", controller.ChangeMulti);
+route.patch("/edit/:id", controller.edit);
+route.post("/create", controller.create);
+route.delete("/delete/:id", controller.delete);
+module.exports = route;
